@@ -1,0 +1,39 @@
+<!-- index.wxml -->
+<view class="container">
+  <scroll-view scroll-x>
+  <view class="category-list">
+    <view wx:for="{{categoryList}}" 
+      class="category {{ category.key === activeCategory ? 'active' : '' }}" 
+      wx:for-item="category" wx:key="{{key}}"
+      data-category="{{ category.key }}"
+      bindtap="onChangeCategory"
+    >
+      {{ category.display }}
+    </view>
+  </view>
+  </scroll-view>
+  <navigator class="top-news" wx:if="newsList.length > 0"
+      url="../detail/detail?address={{newsList[0].address}}"
+    >
+    <view class="meta">
+      {{ newsList[0].source }} 
+    </view>
+    <image mode="aspectFill" src="{{ newsList[0].firstImage }}"></image>
+    <text class="title">
+      {{ newsList[0].title }}
+    </text>
+  
+  </navigator>
+  <navigator wx:for="{{newsList}}" wx:for-item="news" wx:key="{{id}}" wx:if="{{index > 0}}"
+    url="../detail/detail?address={{news.address}}" class="news">
+    <view class="news-body">
+      <view class="title">
+        {{news.title}}
+      </view>
+      <view class="meta">
+        {{news.source}}
+      </view>
+    </view>
+    <image mode="aspectFill" src="{{ news.firstImage }}"></image>
+  </navigator>
+</view>

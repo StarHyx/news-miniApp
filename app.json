@@ -1,0 +1,35 @@
+{
+  "pages":[
+    "pages/news/index",
+    "pages/user/index",
+    "pages/detail/detail"
+  ],
+  "window":{
+    "backgroundTextStyle":"dack",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "THE BEST NEWS",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#d81e06",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/news/index",
+        "iconPath": "image/icon-news.png",
+        "selectedIconPath": "image/icon-news-a.png",
+        "text": "新闻"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "iconPath": "image/icon-user.png",
+        "selectedIconPath": "image/icon-user-a.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "debug": false
+}
